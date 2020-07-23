@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class PlayGuessNumberGame {
 
 
-    public static void main(String[] args) {
+        public void playGuessNumberGame(){
+
+
         GenerateRightFormatAnswer generateRightFormatAnswer = new GenerateRightFormatAnswer();
 
         int count = 1;
@@ -27,7 +29,6 @@ public class PlayGuessNumberGame {
             }
         }
         System.out.println("机会用完");
-        System.exit(0);
-    }
+        }
 
 }
