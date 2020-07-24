@@ -9,7 +9,8 @@ public class NumberFilterTest {
     @Test
     void should_return_wrong_input_when_filter_number_given_12(){
         //given
-        NumberFilter filter=new NumberFilter("12");
+        String input="12";
+        NumberFilter filter=new NumberFilter(input);
         //when
         String output=filter.filter();
         //then
@@ -18,7 +19,8 @@ public class NumberFilterTest {
     @Test
     void should_return_pass_when_filter_number_given_1234(){
         //given
-        NumberFilter filter=new NumberFilter("1234");
+        String input="1234";
+        NumberFilter filter=new NumberFilter(input);
         //when
         String output=filter.filter();
         //then
@@ -27,7 +29,8 @@ public class NumberFilterTest {
     @Test
     void should_return_pass_input_when_filter_number_given_5678(){
         //given
-        NumberFilter filter=new NumberFilter("5678");
+        String input="5678";
+        NumberFilter filter=new NumberFilter(input);
         //when
         String output=filter.filter();
         //then
