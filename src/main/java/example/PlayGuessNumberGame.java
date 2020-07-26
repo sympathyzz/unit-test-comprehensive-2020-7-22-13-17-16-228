@@ -6,7 +6,7 @@ public class PlayGuessNumberGame {
 
     public String getConsoleInput(){
         Scanner scanner = new Scanner(System.in);
-        String guessNum = scanner.next().replace(" ", "");
+        String guessNum = scanner.nextLine().replace(" ", "");
         return guessNum;
     }
     public String GenerateAnswer(){
@@ -16,8 +16,8 @@ public class PlayGuessNumberGame {
         return  answer;
     }
     public String filterNumber(String number){
-        NumberFilter numberFilter = new NumberFilter(number);
-        String output = numberFilter.filter();
+        NumberFilter numberFilter = new NumberFilter();
+        String output = numberFilter.filter(number);
         return output;
     }
     public String guess(String guessNum,String answerNum){
@@ -26,10 +26,10 @@ public class PlayGuessNumberGame {
         return result;
     }
     public void playGuessNumberGame() {
-        String guessNum=getConsoleInput();
+        String answer=GenerateAnswer();
         int count = 0;
         while (count < 6) {
-            String answer=GenerateAnswer();
+            String guessNum=getConsoleInput();
             String output = filterNumber(guessNum);
             if (output.equals("Pass")) {
                 String result = guess(guessNum,answer);
@@ -40,7 +40,11 @@ public class PlayGuessNumberGame {
             }
             count++;
         }
-        System.out.println("机会用完");
+        System.out.println("机会用完,游戏结束,正确答案为："+answer);
     }
 
+    public static void main(String[] args) {
+        PlayGuessNumberGame playGuessNumberGame=new PlayGuessNumberGame();
+        playGuessNumberGame.playGuessNumberGame();
+    }
 }

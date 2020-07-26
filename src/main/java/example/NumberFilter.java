@@ -1,12 +1,8 @@
 package example;
 
 public class NumberFilter {
-    private String input;
-    public NumberFilter(String input) {
-        this.input=input;
-    }
 
-    public String filter() {
+    public String filter(String input) {
         if(input.length()!=4 || isCharRepeat(input)){
             return "Wrong Input,Input again";
         }

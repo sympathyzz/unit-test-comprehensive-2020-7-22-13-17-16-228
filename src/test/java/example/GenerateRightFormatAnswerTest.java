@@ -10,9 +10,10 @@ public class GenerateRightFormatAnswerTest {
     void should_return_pass_when_check_generate_right_format_answer_given_generated_answer(){
         //given
         GenerateRightFormatAnswer generateRightFormatAnswer=new GenerateRightFormatAnswer();
-        NumberFilter filter=new NumberFilter(generateRightFormatAnswer.generateAnswer());
+        String generatedAnswer=generateRightFormatAnswer.generateAnswer();
         //when
-        String output=filter.filter();
+        NumberFilter filter=new NumberFilter();
+        String output=filter.filter(generatedAnswer);
         //then
         assertEquals("Pass",output);
     }
